@@ -7,5 +7,5 @@ resource "random_string" "my_numbers" {
 }
 
 resource "aws_s3_bucket" "my_s3_bucket" {
-  bucket = "epam-tf-lab-${random_string.my_numbers.result}"
+  bucket = "tf-lab-${random_string.my_numbers.result}"
 }
