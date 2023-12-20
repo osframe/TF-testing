@@ -12,14 +12,14 @@ resource "aws_iam_group" "my-iam-group" {
 }
 
 resource "aws_iam_policy" "s3_write_policy" {
-  name   = "write-to-epam-tf-lab-${random_string.my_numbers01.result}"
+  name   = "write-to-tf-lab-${random_string.my_numbers01.result}"
   policy = file("./s3_policy.json")
 
   tags = local.all_tags
 }
 
 resource "aws_iam_role" "my_iam_role" {
-  name = "tf-epam-lab-role"
+  name = "tf-lab-role"
 
   assume_role_policy = <<EOF
 {
@@ -45,7 +45,7 @@ resource "aws_iam_role_policy_attachment" "my_role_attachment" {
 }
 
 resource "aws_iam_instance_profile" "my_instance_profile" {
-  name = "tf-epam-lab-instance-profile"
+  name = "tf-lab-instance-profile"
 
   role = aws_iam_role.my_iam_role.name
 }
