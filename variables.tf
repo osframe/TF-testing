@@ -3,7 +3,7 @@
 variable "student_name" {
   description = "Name of the student learning Terraform"
   type        = string
-  default     = "oscar-fragozo"
+  default     = "john-doe"
 }
 
 variable "availability_zones" {
@@ -25,5 +25,5 @@ variable "ssh_key" {
 variable "my_ip" {
   description = "my public ip address"
   type        = string
-  default     = "190.67.247.186"
+  default     = "190.50,20.180"
 }
